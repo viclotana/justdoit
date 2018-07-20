@@ -7,14 +7,14 @@ function showTab(n) {
   x[n].style.display = "block";
   // ... and fix the Previous/Next buttons:
   if (n == 0) {
-    document.getElementById("prevBtn").style.display = "none";
+    document.querySelector("#prevBtn").style.display = "none";
   } else {
-    document.getElementById("prevBtn").style.display = "inline";
+    document.querySelector("#prevBtn").style.display = "inline";
   }
   if (n == (x.length - 1)) {
-    document.getElementById("nextBtn").innerHTML = "Submit";
+    document.querySelector("#nextBtn").innerHTML = "Submit";
   } else {
-    document.getElementById("nextBtn").innerHTML = "Next";
+    document.querySelector("#nextBtn").innerHTML = "Next";
   }
   // ... and run a function that displays the correct step indicator:
   fixStepIndicator(n)
@@ -32,7 +32,7 @@ function nextPrev(n) {
   // if you have reached the end of the form... :
   if (currentTab >= x.length) {
     //...the form gets submitted:
-    document.getElementById("regForm").submit();
+    document.querySelector("#regForm").submit();
     return false;
   }
   // Otherwise, display the correct tab:
@@ -43,7 +43,7 @@ function validateForm() {
   // This function deals with validation of the form fields
   var x, y, i, valid = true;
   x = document.getElementsByClassName("tab");
-  y = x[currentTab].getElementsByTagName("input");
+  y = x[currentTab].querySelector("input");
   // A loop that checks every input field in the current tab:
   for (i = 0; i < y.length; i++) {
     // If a field is empty...
