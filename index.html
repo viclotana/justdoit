@@ -1,54 +1,118 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Page Title</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
-    
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Page Title</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css"> 
+  <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+  <script>
+</script>
 </head>
-<body>
-    <form id="regForm" action="">
-        <h1>JUST DO IT </h1>
-        <!-- One "tab" for each step in the form: -->
-        <div class="tab">Name:
-          <p><input placeholder="First name..." oninput="this.className = ''"></p>
-          <p><input placeholder="Last name..." oninput="this.className = ''"></p>
-        </div>
-        
-        <div class="tab">Contact Info:
-          <p><input placeholder="E-mail..." oninput="this.className = ''"></p>
-          <p><input placeholder="Phone..." oninput="this.className = ''"></p>
-        </div>
-        
-        <div class="tab">Birthday:
-          <p><input placeholder="dd" oninput="this.className = ''"></p>
-          <p><input placeholder="mm" oninput="this.className = ''"></p>
-          <p><input placeholder="yyyy" oninput="this.className = ''"></p>
-        </div>
-        
-        <div class="tab">Login Info:
-          <p><input placeholder="Username..." oninput="this.className = ''"></p>
-          <p><input placeholder="Password..." oninput="this.className = ''"></p>
-        </div>
-        
-        <div style="overflow:auto;">
-          <div style="float:right;">
-            <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
-            <button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
-          </div>
-        </div>
-        
-        <!-- Circles which indicates the steps of the form: -->
-        <div style="text-align:center;margin-top:40px;">
-          <span class="step"></span>
-          <span class="step"></span>
-          <span class="step"></span>
-          <span class="step"></span>
-        </div>
-        
-        </form>
-<script src="main.js"></script>
+<body >
+  <div class="container">
+      <h2>JUST DO IT</h2>
+  <div class="form">
+    <input id="one" type="radio" name="stage" checked="checked" />
+    <input id="two" type="radio" name="stage" />
+    <input id="three" type="radio" name="stage" />
+    <input id="four" type="radio" name="stage" />
+    <input id="five" type="radio" name="stage" />
+    <input id="six" type="radio" name="stage" />
+  
+    <div class="stages">
+      <label for="one">1</label>
+      <label for="two">2</label>
+      <label for="three">3</label>
+      <label for="four">4</label>
+      <label for="five">5</label>
+      <label for="six">6</label>
+    </div>
+  
+    <div class="panels">
+      <div data-panel="one">
+        <h4>What is Your Goal?</h4>
+        <input list="pasta" type="text" placeholder="Set a Goal" />
+        <datalist id="pasta">
+          <option>drink 2L of water every morning</option>
+          <option>lose 10kg in 2 months</option>
+          <option>quit smoking for 1 month</option>
+          <option>read 5 books this month</option>
+          <option>launch my startup</option>
+          <option>build my first app in 4 days</option>
+          <option>start a youtube channel</option>
+          <option>register for masters at Unilag</option>
+          <option>see 2 movies weekly for 2 months</option>
+          <option>find an apartment in 1 month</option>
+          </datalist>
+          
+        <button class="clacla">Just Do It!</button>
+      </div>
+      <div data-panel="two">
+        <h4>What is your Project Deadline?</h4>
+        <input type="date"  placeholder="Set a Project Deadline" />
+        <button class="clacla">Set Deadline</button>
+      </div>
+      <div data-panel="three">
+        <h4>Pledge a prize commitment</h4>
+        <input type="Number" min="5000" max="5000000" step="5000" placeholder="Prize if you don't meet the deadline" />
+        <button class="clacla">Set Prize</button>
+      </div>
+      <div data-panel="four">
+        <h4>Your Project Progress Supervisor</h4>
+        <input type="text" placeholder="Who would monitor the Project?" />
+        <input type="email" placeholder="Enter Supervisor's Email Address" />
+        <button class="clacla">Submit Supervisor Contact</button>
+      </div>
+      <div data-panel="five">
+        <h4>Your Contact Details</h4>
+        <input name="name" type="text" placeholder="Your Name" />
+        <input name="email" type="email" placeholder="Your Email Address" />
+        <input name="phone" type="number" placeholder="Your Phone Number" />
+        <button class="clacla">Submit Your Contact</button>
+      </div>
+      <div data-panel="six">
+        <h4>T&C Agreement</h4>
+        <p>By Clicking I Agree, you agree that you are giving the 
+        sum of $5 to the Girls Foundation and would get exactly the remaining
+        amount of money if your supervisor confirms that you have successfully
+        completed your chosen project. In the Ocassion that you do not finish in
+        time, 10% of the fund goes to your Supervisor and the rest goes to the 
+        Girls Foundation</p>
+        <input type="checkbox" I Agree />
+        <button data-target="modal1" class="clacla modal-trigger">I Agree</button>
+      </div>
+    </div>
+    <div id="modal1" class="modal">
+      <div class="modal-content">
+        <h4>Congratulations!</h4>
+        <p>You have set to Finish 3 books in 1 week before 
+          August 22, 2018. You would lose #3,500 to the 
+          Girls Foundation and #500 to your supervisor and
+          if you do not meet your deadline.<br> <strong>Goodluck, Your Time Starts Now!</strong>
+        </p>
+      </div>
+      <div class="modal-footer">
+        <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+        <a href="#!" class="modal-close waves-effect waves-green btn-flat">Tweet it</a>
+      </div>
+    </div>
+    <!-- <button class="clacla">Just Do It!</button> -->
+  
+</div>
+</div>
 </body>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+<script>
+   document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.modal');
+    var instances = M.Modal.init(elems);
+  });
+  
+</script>
+<script src="main.js"></script>
 </html>
